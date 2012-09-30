@@ -1,0 +1,28 @@
+(beginning of start.txt)
+G21 (set units to mm)
+(begin center code)
+G91 
+G1 Z8 F4500
+G1 Y150 F3500
+G1 Y-75 F3500
+G1 X150 F3500
+G92 X50 Y-27 Z8
+(end center code)
+G90 
+M108 S255  
+M104 S235 T0 
+M109 S120 T0 
+G1 X-55 Y-30 Z6 F3300 
+M6 T0 (wait for tool to heat up)
+M101 (Extruder on, forward)
+G04 P6500 (Wait t/1000 seconds)
+M103 (Extruder off)
+G04 P6500 (Wait t/1000 seconds)
+(start wipe)
+G1 X-55 Y12.5 Z6 F2000.0
+G1 X-55 Y-4 Z6 F2000.0
+(end wipe)
+G1 X-30 Y30 Z6 F3300.0 (move to initial position)
+G1 Z0 F3300.0 (Go back down)
+M101 (start extruder, fwd)
+(end of start.txt)
